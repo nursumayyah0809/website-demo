@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <style>
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                background: rgb(241, 223, 241);
+                color: rgb(60, 20, 99);
+            }
+             
+            header {
+                background: rgb(26, 7, 10);
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                background: rgb(70, 63, 63);
+                flex-wrap: wrap;
+            }
+
+            nav a, .dropbtn {
+                background: none;
+                border: none;
+                color: white;
+                padding: 14px 20px;
+                cursor: pointer;
+                font-size: 16px;
+                text-decoration: none;
+            }
+
+            nav a:hover, nav a.active, .dropbtn:hover {
+                background: rgb(182, 69, 139);
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: rgb(26, 7, 10);
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                padding: 12px 16px;
+            }
+
+            .dropdown-content a {
+                color: rgb(26, 7, 10);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-content {
+            display: block;
+            }
+
+            .tab-content {
+                display: none;
+                padding: 30px;
+                animation: fadeIn 0.5s ease-in-out;
+            }
+
+            .tab-content.active {
+                display: block;
+            }
+
+            .contact-section {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 30px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .contact-section h2 {
+                margin-bottom: 20px;
+                color: rgb(187, 61, 82);
+            }
+
+            .contact-section p {
+                font-size: 1.2rem;
+                color: rgb(10, 77, 77);
+            }
+
+            .contact-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .btn, .btn-outline {
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 5px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .btn {
+                background-color: rgb(187, 61, 82);
+                color: white;
+            }
+
+            .btn-outline {
+                border: 2px solid rgb(187, 61, 82);
+                color: rgb(187, 61, 82);
+                background-color: white;
+            }
+
+            .btn:hover, .btn-outline:hover {
+                background-color: rgb(182, 69, 139);
+                color: white;
+            }
+
+            footer {
+                background: rgb(26, 7, 10);
+                color: white;
+                text-align: center;
+                padding: 10px;
+                position: -ms-page-footer;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+<header>
+    <h1>WELCOME TO MY WEBSITE</h1>
+</header>
+
+<nav>
+<a href="index.html" class="tab-btn">Home</a>
+<a href="about.html" class="dropbtn">About Me</a>
+<a href="hobbies.html" class="dropbtn">My Hobbies</a>
+    <div class="dropdown">
+    <a href="media.html" class="dropbtn">My Media</a>
+      <div class="dropdown-content">
+    <a href="elementary.html">Primary School</a>
+    <a href="secondary.html">Secondary School</a>
+    <a href="diploma.html">Diploma</a>
+    <a href="degree.html">Degree</a>
+  </div>
+</div>
+
+<a href="education.html">My Education</a>
+<a href="contact.html" class="tab-btn">Contact Me</a>
+</nav>
+
+<section class="contact-section">
+    <h2>Contact Me</h2>
+    <p>If you would like to get in touch, please feel free to reach out through any of the following platforms:</p>
+    <div class="contact-buttons">
+        <a href="https://wa.me/60183567258" target="blank" class="btn">
+            <img src="https://cdn-icons-png.flaticon.com/128/15713/15713434.png" alt="WhatsApp" width="20">
+            WhatsApp Me
+        </a>
+        <a href="mailto:nursumayyah0809@gmail.com" target="_blank" class="btn-outline">
+            <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email" width="20">
+            Email Me
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Nur Sumayyah. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.tab-btn');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                tabButtons.forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        const currentPage = window.location.pathname.split('/').pop();
+        tabButtons.forEach(button => {
+            if (button.getAttribute('href') === currentPage || (currentPage === '' && button.getAttribute('href') === 'index.html')) {
+                button.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
